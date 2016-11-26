@@ -17,13 +17,15 @@
 ################################################################################
 
 class Car
-  $kmsgg = "Insert Key"
+  $kmsgg = "Insert Key" #universal key
 
+# verifies the key, if inserted
   def selfkey
     keys = gets.to_i
     return keys
   end
 
+# Opening the door, else you can't start the car
   def openDoor
     puts msg = "#{$kmsgg} to open door"
     opened = selfkey
@@ -39,20 +41,7 @@ class Car
     end
   end
 
-  def engineStatus
-    if dashboardStatus == 1
-      puts "#{$kmsgg} to start engine"
-      engine = selfkey
-      if engine == 1
-        puts "Engine ON"
-      else
-        puts "Engine OFF"
-      end
-    else
-      puts "Car unable to start without Key"
-    end
-  end
-
+# Checks for saftey instructions before starting the engine.
   def dashboardStatus
     if openDoor == 1
       puts "Fasten your seatbelts"
@@ -69,7 +58,44 @@ class Car
     end
   end
 
+# Starts the engine after the door is accessed.
+  def engineStatus
+    if dashboardStatus == 1
+      puts "#{$kmsgg} to start engine"
+      engine = selfkey
+      if engine == 1
+        puts "Engine ON"
+        return true
+      else
+        puts "Engine OFF"
+        return false
+      end
+    else
+      puts "Car unable to start without Key"
+    end
+  end
+
+# drive the car if engine ON and handbrakes released
+  def driveCar
+    if engineStatus == true
+      print "Release the handbrakes"
+      hbrakes = gets.to_i
+      if hbrakes == 1
+        puts "Put to drive"
+        return true
+      else
+        puts "handbrakes not released"
+        return false
+      end
+    elsif engineStatus == false
+      puts "Car not started"
+      return false
+    else
+      puts "Something went wrong"
+      return false
+    end
+  end
 end
 
 driver = Car.new
-driver.engineStatus
+driver.driveCar
