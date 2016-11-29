@@ -54,6 +54,5 @@ _debts = gets.to_i
 puts "assets"
 _assetv = gets.to_i
 
-fish = CreditRatio.new("#{_debts}","#{_assetv}");
-#fish.acceptvalues
-fish.creditScore
+finance = CreditRatio.new("#{_debts}","#{_assetv}");
+finance.creditScore
