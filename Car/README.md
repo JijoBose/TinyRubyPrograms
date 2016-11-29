@@ -1,4 +1,3 @@
 # Car program
 
-Is just a simulation of a car software.
-Still in Alpha
+Small program to simulate a working of a car.
