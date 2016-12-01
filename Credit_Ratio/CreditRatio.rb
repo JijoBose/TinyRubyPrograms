@@ -18,10 +18,12 @@
 
 class CreditRatio
 
+# initializes the debt and assets value from the user
   def initialize(debt, assets)
     @debt = debt
     @assets = assets
 
+# Calculates percentage value
     def acceptvalues
       _debt = @debt
       _assets = @assets
@@ -30,6 +32,7 @@ class CreditRatio
       return score.to_f
     end
 
+# Calculates the CreditRatio depending on the Debts and assets
     def creditScore
       return case acceptvalues
           when 00..10 then puts "Credit Rating: AAA"
@@ -42,16 +45,16 @@ class CreditRatio
           when 71..80 then puts "Credit Rating: CC"
           when 81..90 then puts "Credit Rating: C"
           when 91..100 then puts "Credit Rating: D"
-      else "No data"
+      else puts "You have defaulted"
       end
     end
   end
 end
 
-
-puts "debt"
+# Main program
+puts "Your Debts"
 _debts = gets.to_i
-puts "assets"
+puts "Your Assets"
 _assetv = gets.to_i
 
 finance = CreditRatio.new("#{_debts}","#{_assetv}");
