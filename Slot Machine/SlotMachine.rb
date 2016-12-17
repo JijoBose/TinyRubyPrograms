@@ -38,13 +38,13 @@ class Casino
           puts "  Slot:2 = #{hit2}"
           puts "  Slot:3 = #{hit3}"
           puts "  Your balance is #{amount}"
-          puts "  jackpot..! You win a #{hit1} and 100c, Happy Holidays..\n\n"
+          puts "  jackpot..!\n 3 #{hit1} in a row\nand 100c.\n\n"
         else
           amount -= 10
           puts "  Slot:1 = #{hit1}"
           puts "  Slot:2 = #{hit2}"
           puts "  Slot:3 = #{hit3}"
-          puts "  No Luck, try again"
+          puts "  Better luck next time,\n try again"
           puts "  Your balance is #{amount}\n\n"
         end
       else
