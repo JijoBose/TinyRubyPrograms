@@ -17,28 +17,34 @@
 ################################################################################
 
 class Quiz
-    def questions
-      quest = ['First question','Second question']
-      options = [["1: answer1","2: answer2"],["1: answer1","2: answer2"]]
-      answ = [1,2]
-      inc = 0
 
-      answ.each do
-        puts "#{quest[inc]}"
-        op1 = 0
-        op2 = 1
-        puts "Your Options:\n #{options[op1][op1]}\n #{options[op1][op2]}"
-        usrinc = gets.to_i
-        if answ[inc] == usrinc
-          puts "Correct"
-          puts ""
-        else
-          puts "incorrect\n"
-          puts ""
-        end
-        inc += 1
+  def initialize(answer)
+    @answer = answer
+    
+  end
+
+  def quizquest
+    quest = ['First question','Second question']
+    options = [["1: answer1","2: answer2"],["1: answer1","2: answer2"]]
+    answ = [1,2]
+    inc = 0
+
+    answ.each do
+      puts "#{quest[inc]}"
+      op1 = 0
+      op2 = 1
+      puts "Your Options:\n #{options[op1][op1]}\n #{options[op1][op2]}"
+      usrinc = gets.to_i
+      if answ[inc] == usrinc
+        puts "Correct"
+        puts ""
+      else
+        puts "incorrect\n"
+        puts ""
       end
+      inc += 1
     end
+  end
 end
 
 audience = Quiz.new
