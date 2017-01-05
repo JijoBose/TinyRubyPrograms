@@ -1,7 +1,6 @@
 class LotteryMachine
-  def luckydraw
-    print "enter any 6 digits: "
-    userin = gets.to_i
+  def luckydraw(ticketno)
+    userin = ticketno
     lottno = "#{rand(0...10)}#{rand(0...10)}#{rand(0...10)}#{rand(0...10)}#{rand(0...10)}#{rand(0...10)}"
     if userin == lottno
       print "You won the Jackpot\n"
@@ -15,5 +14,7 @@ class LotteryMachine
   end
 end
 
+print "enter any 6 digits: "
+userin = gets.to_i
 lottery = LotteryMachine.new
-lottery.luckydraw
+lottery.luckydraw(userin)
